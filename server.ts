@@ -1,6 +1,6 @@
 import app from "./src/app";
 import { config } from "./config/config";
-
+import connectDb from "./config/db";
 
 
 
@@ -9,6 +9,10 @@ import { config } from "./config/config";
 
 
 const startServer = () =>{
+
+    //connect database
+    connectDb()
+
     const port = config.port || 3000
 
     app.listen(port,()=>{

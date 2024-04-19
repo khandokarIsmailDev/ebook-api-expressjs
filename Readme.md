@@ -56,6 +56,14 @@ npm i -D @types/dotenv
 
 - create `config.ts` file
 
+- install mongoose 
+```js
+npm i mongoose
+npm i -D @types/mongoose
+```
+
+
+
 
 
 
