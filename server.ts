@@ -8,10 +8,10 @@ import connectDb from "./config/db";
 
 
 
-const startServer = () =>{
+const startServer = async() =>{
 
     //connect database
-    connectDb()
+    await connectDb()
 
     const port = config.port || 3000
 
