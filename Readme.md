@@ -54,6 +54,7 @@ npm i dotenv
 npm i -D @types/dotenv
 ```
 
+- create `config.ts` file
 
 
 
