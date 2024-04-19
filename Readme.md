@@ -21,4 +21,7 @@ npx tsc --init
 "dev":"nodemon server.ts"
 ```
 
+- add .gitignore
+  - er jonno gitignore name extention install korte hobe. `ctrl+shift+p` dile `add gitignore` suggestion click kore `node ..` slelet kore entry dile auto generate hoye jabe
 
+  
