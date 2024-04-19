@@ -16,4 +16,9 @@ npm i -D typescript ts-node nodemon @types/node
 npx tsc --init
 ```
 
+- add dev script in `package.json`
+```js
+"dev":"nodemon server.ts"
+```
+
 
