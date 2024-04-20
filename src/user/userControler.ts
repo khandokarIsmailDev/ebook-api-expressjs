@@ -2,6 +2,9 @@ import { NextFunction, Request, Response } from "express";
 import createHttpError from "http-errors";
 import userModal from './userModal'
 import bcrypt from "bcrypt"
+import { sign } from "jsonwebtoken";
+import { config } from "../config/config";
+
 
 const createUser = async (req:Request,res:Response,next:NextFunction) =>{
 
@@ -25,7 +28,18 @@ const createUser = async (req:Request,res:Response,next:NextFunction) =>{
     const hashedPassword = await bcrypt.hash(password,10)
 
 
-    res.json({name:"User Created"})
+    const newUser = await userModal.create({
+        name,
+        email,
+        password:hashedPassword
+    })
+
+    //token generation - jwt
+    const token = sign({sub:newUser._id},config.jwt as string,{expiresIn:'7d'})
+
+
+    //response
+    res.status(201).json({access_token:token})
 }
 
 

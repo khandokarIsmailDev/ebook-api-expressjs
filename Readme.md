@@ -80,3 +80,9 @@ npm i bcrypt
 npm i -D @types/bcrypt
 ```
 
+- akhon token generate  korbo . er jonno jsonweb token 
+```js
+npm i jsonwebtoken
+npm i -D @types/jsonwebtoken
+```
+
