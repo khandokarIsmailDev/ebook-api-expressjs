@@ -6,6 +6,9 @@ import userRouter from './user/userRouter';
 
 const app = express()
 
+// req.body theke json support korate ai configuretion
+app.use(express.json())
+
 
 app.get('/',(req,res)=>{
 

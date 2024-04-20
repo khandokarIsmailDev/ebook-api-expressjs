@@ -69,4 +69,8 @@ npm i http-errors
 npm i -D @types/http-errors
 
 
+# HTTP response status codes
+
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
 
