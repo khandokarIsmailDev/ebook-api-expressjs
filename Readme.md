@@ -74,3 +74,9 @@ npm i -D @types/http-errors
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
 
+- password hash korar jonno bcrypt package install korte hobe
+```js
+npm i bcrypt
+npm i -D @types/bcrypt
+```
+
