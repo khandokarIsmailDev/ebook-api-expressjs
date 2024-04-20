@@ -63,7 +63,10 @@ npm i -D @types/mongoose
 ```
 
 
-
+- Setup Error handling 
+```js
+npm i http-errors
+npm i -D @types/http-errors
 
 
 
