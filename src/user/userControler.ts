@@ -62,6 +62,45 @@ const createUser = async (req:Request,res:Response,next:NextFunction) =>{
 }
 
 
+const loginUser = async(req:Request,res:Response,next:NextFunction)=>{
+    const {email,password} = req.body
+
+    if(!email || !password){
+        return next(createHttpError(400,"all fields are required"))
+    }
+
+    
+
+    try{
+        let user = await userModal.findOne({email})
+
+        if(!user){
+            return next(createHttpError(404,"User is not found!"))
+        }
+
+        const isMatch = await bcrypt.compare(password,user.password)
+        if(!isMatch){
+            return next(createHttpError(400,"User Not Authenticated!"))
+        }
+
+        //create a new access token for login
+        const token = sign({sub:user._id},config.jwt as string,{expiresIn:'7d'})
+
+        //response
+        res.status(201).json({access_token:token})
+
+    }catch(err){
+        return next(createHttpError(500,"error while login"))
+    }
+
+
+    return res.json({name:"ok ismail login"})
+}
+
+
+
+
 export {
-    createUser
+    createUser,
+    loginUser
 }
