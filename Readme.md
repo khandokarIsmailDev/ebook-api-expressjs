@@ -91,3 +91,10 @@ npm i -D @types/jsonwebtoken
 npm i multer
 npm i -D @types/multer
 ```
+
+
+- cloudnary website use korbo image host korar jonno (github account diye active)
+```ts
+npm i cloudinary
+```
+
