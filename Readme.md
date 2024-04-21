@@ -86,3 +86,8 @@ npm i jsonwebtoken
 npm i -D @types/jsonwebtoken
 ```
 
+- now user multer for upload image
+```ts
+npm i multer
+npm i -D @types/multer
+```

@@ -1,9 +1,22 @@
-import express from 'express'
-import { createBook } from './bookController'
+import express from "express";
+import { createBook } from "./bookController";
+import multer from "multer";
+import path from "node:path";
 
-const bookRouter = express.Router()
+const bookRouter = express.Router();
 
-bookRouter.post('/',createBook)
+//file store local
+const uploads = multer({
 
+  dest: path.resolve(__dirname, "../../public/data/uploads"),
 
-export default bookRouter
+  limits: { fileSize: 3e7 }, //30mb = 1024*1024*1024*..
+
+});
+
+bookRouter.post("/",uploads.fields([
+    {name: "converImg", maxCount:1},
+    {name: "file", maxCount:1}
+]), createBook);
+
+export default bookRouter;
